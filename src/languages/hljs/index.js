@@ -159,6 +159,7 @@ export { default as shell } from './shell';
 export { default as smali } from './smali';
 export { default as smalltalk } from './smalltalk';
 export { default as sml } from './sml';
+export { default as solidity } from './solidity';
 export { default as sqf } from './sqf';
 export { default as sql } from './sql';
 export { default as stan } from './stan';
