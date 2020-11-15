@@ -21,14 +21,14 @@
 * basic
 * bnf
 * brainfuck
-* cLike (c-like)
 * c
+* cLike (c-like)
 * cal
 * capnproto
 * ceylon
 * clean
-* clojureRepl (clojure-repl)
 * clojure
+* clojureRepl (clojure-repl)
 * cmake
 * coffeescript
 * coq
@@ -54,8 +54,8 @@
 * elixir
 * elm
 * erb
-* erlangRepl (erlang-repl)
 * erlang
+* erlangRepl (erlang-repl)
 * excel
 * fix
 * flix
@@ -87,8 +87,8 @@
 * javascript
 * jbossCli (jboss-cli)
 * json
-* juliaRepl (julia-repl)
 * julia
+* juliaRepl (julia-repl)
 * kotlin
 * lasso
 * latex
@@ -126,8 +126,8 @@
 * perl
 * pf
 * pgsql
-* phpTemplate (php-template)
 * php
+* phpTemplate (php-template)
 * plaintext
 * pony
 * powershell
@@ -138,8 +138,8 @@
 * protobuf
 * puppet
 * purebasic
-* pythonRepl (python-repl)
 * python
+* pythonRepl (python-repl)
 * q
 * qml
 * r
@@ -178,8 +178,8 @@
 * typescript
 * vala
 * vbnet
-* vbscriptHtml (vbscript-html)
 * vbscript
+* vbscriptHtml (vbscript-html)
 * verilog
 * vhdl
 * vim
