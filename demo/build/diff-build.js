@@ -319,17 +319,6 @@ var ExamplesLinks = function ExamplesLinks() {
 
 /***/ }),
 
-/***/ "./external-languages-hljs.json":
-/*!**************************************!*\
-  !*** ./external-languages-hljs.json ***!
-  \**************************************/
-/*! exports provided: 0, default */
-/***/ (function(module) {
-
-module.exports = [{"language":"solidity","module":"highlightjs-solidity"}];
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
@@ -75442,7 +75431,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var externalLanguages = __webpack_require__(/*! ../external-languages-hljs */ "./external-languages-hljs.json");
+var externalLanguages = __webpack_require__(/*! ./languages/hljs/external-languages */ "./src/languages/hljs/external-languages.json");
 
 externalLanguages.forEach(function (definition) {
   var languageModule = __webpack_require__("./src sync recursive")(definition.module);
@@ -75939,6 +75928,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/***/ }),
+
+/***/ "./src/languages/hljs/external-languages.json":
+/*!****************************************************!*\
+  !*** ./src/languages/hljs/external-languages.json ***!
+  \****************************************************/
+/*! exports provided: 0, default */
+/***/ (function(module) {
+
+module.exports = [{"language":"solidity","module":"highlightjs-solidity"}];
 
 /***/ }),
 

@@ -10,7 +10,10 @@ const autogenMessage =
 const externalLanguages = require(path.join(
   __dirname,
   '..',
-  'external-languages-hljs'
+  'src',
+  'languages',
+  'hljs',
+  'external-languages'
 ));
 
 function makeImportName(name) {
