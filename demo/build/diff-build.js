@@ -319,6 +319,17 @@ var ExamplesLinks = function ExamplesLinks() {
 
 /***/ }),
 
+/***/ "./external-languages-hljs.json":
+/*!**************************************!*\
+  !*** ./external-languages-hljs.json ***!
+  \**************************************/
+/*! exports provided: 0, default */
+/***/ (function(module) {
+
+module.exports = [{"language":"solidity","module":"highlightjs-solidity"}];
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
@@ -73694,6 +73705,25 @@ function extend() {
 
 /***/ }),
 
+/***/ "./src sync recursive":
+/*!******************!*\
+  !*** ./src sync ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./src sync recursive";
+
+/***/ }),
+
 /***/ "./src/async-languages/create-language-async-loader.js":
 /*!*************************************************************!*\
   !*** ./src/async-languages/create-language-async-loader.js ***!
@@ -75411,6 +75441,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var externalLanguages = __webpack_require__(/*! ../external-languages-hljs */ "./external-languages-hljs.json");
+
+externalLanguages.forEach(function (definition) {
+  var languageModule = __webpack_require__("./src sync recursive")(definition.module);
+
+  if (languageModule.definer) {
+    lowlight__WEBPACK_IMPORTED_MODULE_2___default.a.registerLanguage(definition.language, languageModule.definer());
+  } else {
+    var hljsDefinition = languageModule(lowlight__WEBPACK_IMPORTED_MODULE_2___default.a);
+
+    if (hljsDefinition) {
+      lowlight__WEBPACK_IMPORTED_MODULE_2___default.a.registerLanguage(definition.language, hljsDefinition);
+    }
+  }
+});
 var highlighter = Object(_highlight__WEBPACK_IMPORTED_MODULE_0__["default"])(lowlight__WEBPACK_IMPORTED_MODULE_2___default.a, _styles_hljs_default_style__WEBPACK_IMPORTED_MODULE_1__["default"]);
 highlighter.supportedLanguages = _languages_hljs_supported_languages__WEBPACK_IMPORTED_MODULE_3__["default"];
 /* harmony default export */ __webpack_exports__["default"] = (highlighter);
