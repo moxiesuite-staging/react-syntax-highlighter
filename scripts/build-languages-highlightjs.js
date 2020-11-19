@@ -53,6 +53,45 @@ function createAsyncLanguageLoadersIndex(definitions) {
   );
 }
 
+function createExternalLanguageRegistrations(definitions) {
+  let lines = [
+    autogenMessage,
+    `
+function registerLanguage(lowlight, definition) {
+  const languageModule = require(definition.module);
+  if (languageModule.definer) {
+    lowlight.registerLanguage(definition.language, languageModule.definer());
+  } else {
+    const hljsDefinition = languageModule(lowlight);
+    if (hljsDefinition) {
+      lowlight.registerLanguage(definition.language, hljsDefinition);
+    }
+  }
+}
+
+module.exports = function(lowlight) {`
+  ];
+  lines = lines.concat(
+    definitions.map(
+      definition =>
+        `\n  registerLanguage(lowlight, { language: '${
+          definition.language
+        }', module: '${definition.module}' });`
+    )
+  );
+  lines.push(`\n}\n`);
+
+  fs.writeFile(
+    path.join(__dirname, `../src/highlight-register-external-languages.js`),
+    lines.join(''),
+    err => {
+      if (err) {
+        throw err;
+      }
+    }
+  );
+}
+
 function createSupportedLanguagesArray(definitions) {
   let lines = [autogenMessage, `export default [`];
   lines = lines.concat(
@@ -112,6 +151,7 @@ fs.readdir(
 
     createAsyncLanguageLoadersIndex(allLanguages);
     createSupportedLanguagesArray(allLanguages);
+    createExternalLanguageRegistrations(externalLanguages);
 
     const availableLanguageNames = allLanguages.map(
       definition => definition.language
