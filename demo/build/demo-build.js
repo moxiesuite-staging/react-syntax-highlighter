@@ -75592,11 +75592,10 @@ function registerLanguage(lowlight, definition) {
   }
 }
 
-module.exports = function (lowlight) {
-  registerLanguage(lowlight, {
-    language: 'solidity',
-    module: 'highlightjs-solidity'
-  });
+module.exports = function (lowlight) {// registerLanguage(lowlight, {
+  //   language: 'solidity',
+  //   module: 'highlightjs-solidity'
+  // });
 };
 
 /***/ }),
